@@ -4,7 +4,7 @@ import "./App.css";
 import PouchDB from 'pouchdb';
 
 
-var db = PouchDB('data');
+var db = PouchDB('dataB1');
 class TableRow extends React.Component {
   constructor(props) {
     super(props);

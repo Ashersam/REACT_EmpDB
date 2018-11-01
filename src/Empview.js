@@ -1,10 +1,8 @@
 import React from 'react';
 import swal from 'sweetalert';
 import "./App.css";
-import PouchDB from 'pouchdb';
 
 
-var db = PouchDB('data');
 class Empview extends React.Component {
   constructor(props) {
     super(props);
@@ -39,9 +37,9 @@ class Empview extends React.Component {
 
   render() {
     var name = this.props.product.name;
-    var Designation = this.props.product.designation
-    var Address = this.props.product.address
-    var Empid = this.props.product._id
+    var Designation = this.props.product.designation;
+    var Address = this.props.product.address;
+    var Empid = this.props.product._id;
 
 // console.log(this.state.EmpTemp);  
 // console.log(this.state.EmpTemp.name);

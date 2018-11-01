@@ -1,2 +1,3 @@
-# REACT_EmpDB
-React website that stores data from user and saves in pouch db update and delete and add new data
+# basic-react-form
+
+[Watch the YouTube video to learn how it was made.](https://youtu.be/_Dq8QnQtx5Y)

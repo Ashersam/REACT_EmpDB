@@ -11,7 +11,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import PouchDB from 'pouchdb';
 
 
-var db = PouchDB('data');
+var db = PouchDB('dataB1');
 var docs="";
 var name;
 var Designation ="";
@@ -26,7 +26,7 @@ class view extends React.Component {
      
     this.state = {
       EmpTemp:{},
-      filterText: null
+      filterText: ""
     }
   }
 
@@ -86,68 +86,12 @@ db.allDocs({
 }
 
 
-
-
-
-
-
   render() {
-    // name = this.state.EmpTemp.name;
-    // Designation = this.state.EmpTemp.designation;
-    // Address = this.state.EmpTemp.address;
-    // Empid =this.state.EmpTemp.uni;
-// console.log(this.state.EmpTemp);  
-// console.log(this.state.EmpTemp); 
 
-employees = this.state.EmpTemp;
-
-   
-    
-
-    {Object.keys(employees).map((k,v) => {
-      Empid = employees[v]._id;
-      name = employees[v].name;
-      Designation = employees[v].designation;
-      Address = employees[v].address;
-
-    })}
 
     return (
       <div>
-{/* <div className="filter">
-      <div className='Form3'>
-        <div className = 'table'>
-        <Table hover>
-       <TableHead>
-           <tr>
-         <th>EMPID</th>
-         <th>NAME</th>
-         <th>DESIGNA</th>
-         <th>ADDRESS</th>
-           </tr>
-           </TableHead>
-           <TableBody>
-           {Object.keys(employees).map((k, v) => {
-            return(
-              <tr>
-        <td>{employees[v]._id}</td>
-        <td>{employees[v].name}</td>
-        <td>{employees[v].designation}</td>
-        <td>{employees[v].address}</td>
-        <td>
-           <button onClick={this.destroy}>x</button>
-        </td>
-        </tr>
-        )
-
-           })
-           }
-           </TableBody>
-     </Table>
-         </div>
-         </div>
-         </div> */}
-
+         
         <ViewRow 
          filterText = {this.state.filterText}
          onFilter={this.handleFilter}

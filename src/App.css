@@ -10,7 +10,15 @@ body{
   background-position: center;
   font-family: sans-serif;
 }
-
+.error-msg {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+}
+.error-msg {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
 
 /* 
 
@@ -192,23 +200,35 @@ form {
   font-style: italic;
 }
 
+.error_Msg {
+  color: #cc0000;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font: 1.5em Times;
+  font-style: italic;
+  align-items: center;
+  opacity: 0.8;
+  background-blend-mode: lighten;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
 button:hover {
-  background-color: #9b2c2c;
+  background-color: #7a2e2e;
   padding-right: 5px;
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
-
 }
 .button {
-    background-color: #9b2c2c;
+    background-color: #9e9393;
     padding-right: 5px;
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
-    background-color: #c04949;
+    background-color: #d1a5a5;
     border-radius: 4px;
     background-color: #214f96;
     border: none;
@@ -222,15 +242,18 @@ button:hover {
     margin: 5px;
     float: center;
 }
+
+
+
 Link {
   shape-image-threshold:inherit;
-  background-color: #9b2c2c;
+  background-color: #db9f9f;
   padding-right: 5px;
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
-  background-color: #c04949;
+  background-color: #e9baba;
   border-radius: 4px;
   background-color: #214f96;
   border: none;
@@ -245,13 +268,30 @@ Link {
   float: center;
 }
 
+
+
 input[type=submit]:hover {
-  background-color: #c04949;
+  background-color: #e4a6a6;
   padding-right: 5px;
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
+}
+header1 {
+  padding: -5px;
+  padding-bottom: 2px;
+  text-align: center;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  font: 3em Times;
+  font-display: center;
+  opacity: 0.7;
+
+  /* border-bottom-left-radius: 2in; */
+  /* border-bottom-right-radius: 2in; */
+  background-blend-mode: lighten;
+
 }
 
 header {
@@ -267,4 +307,33 @@ header {
   border-bottom-right-radius: 2in;
   background-blend-mode: lighten;
 
+}
+header2 {
+  padding: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  font: 3em Times;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0.9;
+  font-stretch: extra-condensed;
+  border-bottom-left-radius: 1.3in;
+  border-bottom-right-radius: 1.3in;
+  background-blend-mode: lighten;
+
+}
+
+nav {
+  background-color: rgb(236, 236, 236);
+  padding: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  font: 5em Times;
+  opacity: 0.9;
+  border-bottom-left-radius: 2in;
+  border-bottom-right-radius: 2in;
+  background-blend-mode: lighten;
 }

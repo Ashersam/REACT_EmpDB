@@ -13,7 +13,7 @@ import view from "./view";
  
 
 
-var db = new PouchDB('data');
+var db = new PouchDB('dataB1');
 var docs ="";
 // console.log ("Database created Successfully.");
 
@@ -150,8 +150,8 @@ db.allDocs({
        <nav className="navbar">
        
 
-       <h3><Link to="/signout">signout</Link></h3>
-      <h5><Link to="/emp/view">View and Delete</Link></h5>
+       <h3><Link to="/signout">Sign_Out</Link></h3>
+      <h5><Link to="/emp/view">View_DataBase</Link></h5>
 
        </nav>
      

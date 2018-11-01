@@ -6,14 +6,15 @@ import PouchDB from 'pouchdb';
 import ThankYou from './ThankYou';
 
 
-var db = new PouchDB("signin");
+var db = new PouchDB("signin1");
 var temp3="";
 var temp4= "";
 var temp6={};
-var length1 = {};
+var docs1 ="";
 var docs ="";
 var j;
-
+var errors={};
+var reset = {name:""};
 class Login extends React.Component {
   // constructor(){
   //   super();
@@ -22,7 +23,8 @@ class Login extends React.Component {
 
 
   state = {
-   username: {}
+   username: {},
+   errors:{}
      }
   
 handleFormChange = (e) => {
@@ -48,41 +50,53 @@ savedatas = (e) => {
     "name":temp3,
     "pass": temp4,
   })
-  db.allDocs({
-    include_docs: true
-  }).then(function (result) {
-    docs = result.rows.map(function (row) {
-      return row.doc.name;
-      
-    });
-   
-    for (j =0;j<length1; j++) {
-      temp6[j] = docs;
-    }
-      
-    length1 = docs.length;
-   
-  }).catch(function (err) {
-    console.log(err);
-  });
   
   this.props.history.push(`/thankyou`);
 }
 
 
-
   gotoDatabase = (e) => {
     e.preventDefault();
 
+    db.allDocs({
+      include_docs: true
+    }).then(function (result) {
+      docs = result.rows.map(function (row) {
+        return row.doc.name;
+        
+      });
+    }).catch(function (err) {
+      console.log(err);
+    });
+    db.allDocs({
+      include_docs: true
+    }).then(function (result) {
+      docs1 = result.rows.map(function (row) {
+        return row.doc.pass;
+        
+      });
+    })
     let temp1 = this.state.username.name;
     let temp2 = this.state.username.password;
 
-    console.log(docs);
-  
-    for ( j =0;j<length1; j++){
-      if(docs[j] === temp1)
+    for ( j =0;j<docs.length; j++){
+      if(docs[j] === temp1 && docs1[j] === temp2){
         this.props.history.push(`/emp`);
+        this.setState({
+          errors: reset
+        });
+
+      }        
       }
+      errors["name"] = "Username or Password is Incorrect...:-(";
+    console.log(docs);
+    console.log(docs1);
+
+    this.setState({
+      errors: errors
+    });
+    
+    
 }
 
  
@@ -90,8 +104,15 @@ savedatas = (e) => {
   render() {
     return (
       <BrowserRouter>
-      
+     
       <div className="login">
+     <div className = "heading">
+     <header2>Welcome To EMPLOYEES DATABASE FORUM</header2>
+     </div> 
+      <div className="error_Msg">
+      
+       {this.state.errors.name}
+        </div>  
       <div className="item1">
       <form className="login-form" onSubmit={this.gotoDatabase}>
       <Container>
@@ -107,7 +128,7 @@ savedatas = (e) => {
                    <strong> IN</strong></a></h3>
                 </div>
                 <Input
-                label="Your email" 
+                label="UserName" 
                 icon="envelope" 
                 group type="text" 
                 name="name"
@@ -127,9 +148,6 @@ savedatas = (e) => {
                   <div className="text-center mb-3 col-md-12">
                     <Button color="success" rounded type="submit"   className="btn-block z-depth-1">Sign_In</Button>
                   </div>
-                  <div className="row my-3 d-flex justify-content-center">
-                    <Button type="button" color="white" rounded className="mr-md-3 z-depth-1a"><Fa icon="facebook" className="blue-text text-center" /></Button>
-                    </div>
                 </Row>
               </div>
             </Card>

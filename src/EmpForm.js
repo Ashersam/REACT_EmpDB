@@ -2,6 +2,7 @@ import React from 'react';
 import "./App.css";
 import {FormControl} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Container, Row, Col, Input, Button, Fa, Card, CardBody, ModalFooter } from 'mdbreact';
 
 
 const RESET_VALUES = {name:'', Designation:'', Address:''};
@@ -122,7 +123,9 @@ validateForm() {
 
   render() {
     return ( <div>
-<nav className="navbar"> <h1><Link to="/emp">Homepage</Link></h1> 
+     
+     <header1><h>Enter Following Details To Save in PouchDB</h></header1>
+<nav className="navbar"> <h1><Link to="/emp">Home_Page</Link></h1> 
 </nav>
      
       <article>
@@ -131,50 +134,41 @@ validateForm() {
       <div className="Form">
       <div className="Empform">
       <form name="EmpForm"  onSubmit={this.submituserRegistrationForm}>
-        <h3>Enter A New Emp Details</h3>        
-        <p>
-        <label>
-            EmpName
-            <br />
-        <FormControl
+        <h1>Enter A New Emp Details</h1>        
+       
+        <Input
             type="text" 
             name="name" 
+            label="UserName" 
             maxLength="15"
+            icon="user"
             required
             onChange={this.handleformChange}
             value={this.state.Emp.name}
             />
-            </label>
-            </p> 
         <div className="errorMsg">{this.state.errors.name}</div>
-        <p>
-          <label>
-            Designation
-            <br />
-            <FormControl
+        
+            <Input
             type="text" 
+            label="Designation" 
             name="Designation" 
             maxLength="15"
+            icon="pencil"
             required
             onChange={this.handleformChange}
             value={this.state.Emp.Designation}
              />
-          </label>
-        </p>
         <div className="errorMsg">{this.state.errors.Designation}</div>
-        <p>
-          <label>
-            Address
-            <br />
-            <FormControl
+        
+            <Input
             type="text" 
+            label="Address" 
             name="Address" 
+            icon="envelope"
             required
             onChange={this.handleformChange}
             value={this.state.Emp.Address}
-             />
-          </label>
-        </p>
+/>
         <div className="errorMsg">{this.state.errors.Address}</div>
         <input type="submit" className="button" value="Save"/>
         <Link to="/emp">Cancel</Link>

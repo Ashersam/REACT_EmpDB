@@ -61,8 +61,10 @@ if(count===0) {
     return (
      
       <div>
+       
+       <header1><h>List of Employees Details in LocalStorage</h></header1>
         <nav className="navbar">
-      <h2><Link to="/emp/data">Editpage</Link></h2>
+      <h2><Link to="/emp/data">Edit_Page</Link></h2>
       </nav>
       <div className="filter">
  
